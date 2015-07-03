@@ -8,7 +8,7 @@
 	<distributable />
 
 	<welcome-file-list>
-		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 
 	<context-param>
@@ -37,26 +37,6 @@
 		<url-pattern>*.htm</url-pattern>
 	</filter-mapping>
 	
-	<filter>
-		<filter-name>SessionFilter</filter-name>
-		<filter-class>com.papa2.boss.framework.web.filter.SessionFilter</filter-class>
-	</filter>
-
-	<filter-mapping>
-		<filter-name>SessionFilter</filter-name>
-		<url-pattern>*.htm</url-pattern>
-	</filter-mapping>
-	
-	<filter>
-		<filter-name>webwork</filter-name>
-		<filter-class>com.opensymphony.webwork.dispatcher.FilterDispatcher</filter-class>
-	</filter>
-
-	<filter-mapping>
-		<filter-name>webwork</filter-name>
-		<url-pattern>*.htm</url-pattern>
-	</filter-mapping>
-	
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -65,11 +45,6 @@
 		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
 	</listener>
 
-	<error-page>
-		<error-code>404</error-code>
-		<location>/error/errorAction!notFound.htm</location>
-	</error-page>
-	
 	<session-config>
 		<session-timeout>1</session-timeout>
 	</session-config>

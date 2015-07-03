@@ -9,8 +9,6 @@ import javax.xml.bind.annotation.XmlAccessorType;
 
 import org.apache.commons.lang.StringUtils;
 
-import com.papa2.cube.framework.annotation.Decode;
-
 /**
  * SearchInfo.
  * 
@@ -38,7 +36,6 @@ public class SearchInfo implements Serializable {
 
 	private String[] codes;
 
-	@Decode
 	private String search;
 
 	private int limit = LIMIT;
