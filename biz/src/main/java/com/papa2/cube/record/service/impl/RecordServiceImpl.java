@@ -9,6 +9,11 @@ import com.papa2.cube.api.record.bo.Record;
 import com.papa2.cube.framework.util.LogUtil;
 import com.papa2.cube.record.dao.IRecordDao;
 
+/**
+ * 
+ * @author xujiakun
+ * 
+ */
 public class RecordServiceImpl implements IRecordService {
 
 	private Logger logger = Logger.getLogger(RecordServiceImpl.class);
