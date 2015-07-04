@@ -30,5 +30,6 @@
 	<typeAlias alias="charaRplace" type="com.papa2.cube.framework.ibatis.type.CharacterReplaceHanlderCallback" />
 
 	<sqlMap resource="ibatis/global.xml" />
+	<sqlMap resource="ibatis/sqlmap-record.xml" />
     
 </sqlMapConfig>
