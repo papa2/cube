@@ -5,6 +5,12 @@
 
 	<bean id="syncService" class="com.papa2.cube.sync.service.impl.SyncServiceImpl">
 		<property name="recordService" ref="recordService" />
+		<property name="platformRecordUrl">
+			<value>${platform.record.url}</value>
+		</property>
+		<property name="serialNo">
+			<value>${serial.no}</value>
+		</property>
 	</bean>
 	
 </beans>
