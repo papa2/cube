@@ -36,12 +36,6 @@
 			<artifactId>joda-time</artifactId>
 		</dependency>
 
-		<!-- json -->
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-		</dependency>
-
 		<!-- httpclient -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
