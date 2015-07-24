@@ -30,6 +30,18 @@
 			<artifactId>commons-lang</artifactId>
 		</dependency>
 
+		<!-- joda -->
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+		</dependency>
+
+		<!-- json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+		</dependency>
+
 		<!-- httpclient -->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
@@ -39,13 +51,7 @@
 		<!-- spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring</artifactId>
-		</dependency>
-
-		<!-- json -->
-		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
+			<artifactId>spring-webmvc</artifactId>
 		</dependency>
 
 		<!-- log4j -->
