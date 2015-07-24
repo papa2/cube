@@ -26,7 +26,6 @@
 		<javax.mail.version>1.4.4</javax.mail.version>
 		<jaxen.version>1.1.6</jaxen.version>
 		<joda-time.version>2.8.1</joda-time.version>
-		<json.version>20090211</json.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<netty.version>3.6.6.Final</netty.version>
@@ -53,12 +52,6 @@
 				<groupId>commons-beanutils</groupId>
 				<artifactId>commons-beanutils</artifactId>
 				<version>${commons-beanutils.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>commons-codec</groupId>
-				<artifactId>commons-codec</artifactId>
-				<version>${commons-codec.version}</version>
 			</dependency>
 
 			<dependency>
@@ -139,18 +132,6 @@
 				<version>${joda-time.version}</version>
 			</dependency>
 
-			<!-- dom4j -->
-			<dependency>
-				<groupId>dom4j</groupId>
-				<artifactId>dom4j</artifactId>
-				<version>${dom4j.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>jaxen</groupId>
-				<artifactId>jaxen</artifactId>
-				<version>${jaxen.version}</version>
-			</dependency>
-
 			<!-- fastjson -->
 			<dependency>
 				<groupId>com.alibaba</groupId>
@@ -163,13 +144,6 @@
 				<groupId>org.apache.httpcomponents</groupId>
 				<artifactId>httpclient</artifactId>
 				<version>${httpclient.version}</version>
-			</dependency>
-
-			<!-- json -->
-			<dependency>
-				<groupId>org.json</groupId>
-				<artifactId>json</artifactId>
-				<version>${json.version}</version>
 			</dependency>
 
 			<!-- mail -->

@@ -1,8 +1,7 @@
 package com.papa2.cube.api.cache.bo;
 
+import java.io.Serializable;
 import java.util.Date;
-
-import com.papa2.cube.framework.bo.SearchInfo;
 
 /**
  * cache狀態對象.
@@ -10,7 +9,7 @@ import com.papa2.cube.framework.bo.SearchInfo;
  * @author xujiakun
  * 
  */
-public class CacheStats extends SearchInfo {
+public class CacheStats implements Serializable {
 
 	private static final long serialVersionUID = 2587109565600354500L;
 
