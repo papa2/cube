@@ -25,7 +25,7 @@ public class Record implements Serializable {
 	/**
 	 * 停车卡信息.
 	 */
-	private String parkCardNo;
+	private String cardNo;
 
 	/**
 	 * 车牌信息.
@@ -48,12 +48,12 @@ public class Record implements Serializable {
 		this.endTime = endTime;
 	}
 
-	public String getParkCardNo() {
-		return parkCardNo;
+	public String getCardNo() {
+		return cardNo;
 	}
 
-	public void setParkCardNo(String parkCardNo) {
-		this.parkCardNo = parkCardNo;
+	public void setCardNo(String cardNo) {
+		this.cardNo = cardNo;
 	}
 
 	public String getCarNo() {

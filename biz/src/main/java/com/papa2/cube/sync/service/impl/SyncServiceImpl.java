@@ -1,5 +1,6 @@
 package com.papa2.cube.sync.service.impl;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -10,6 +11,7 @@ import com.alibaba.fastjson.JSON;
 import com.papa2.cube.api.record.IRecordService;
 import com.papa2.cube.api.record.bo.Record;
 import com.papa2.cube.api.sync.ISyncService;
+import com.papa2.cube.framework.util.EncryptUtil;
 import com.papa2.cube.framework.util.HttpUtil;
 import com.papa2.cube.framework.util.LogUtil;
 
@@ -26,7 +28,9 @@ public class SyncServiceImpl implements ISyncService {
 
 	private String platformRecordUrl;
 
-	private String serialNo;
+	private String parkCode;
+
+	private String parkSecret;
 
 	@Override
 	public void sync() {
@@ -34,8 +38,23 @@ public class SyncServiceImpl implements ISyncService {
 
 		if (list != null && list.size() > 0) {
 			Map<String, String> params = new HashMap<String, String>();
-			params.put("serialNo", serialNo);
+			params.put("parkCode", parkCode);
 			params.put("recordList", JSON.toJSONString(list));
+
+			String timestamp = Long.toString(System.currentTimeMillis() / 1000);
+			StringBuilder sb = new StringBuilder();
+			sb.append("parkCode=").append(parkCode).append("&parkSecret=").append(parkSecret).append("&timestamp=")
+				.append(timestamp);
+
+			String signature = null;
+			try {
+				signature = EncryptUtil.encryptSHA(sb.toString());
+			} catch (IOException e) {
+				logger.error(e);
+			}
+
+			params.put("signature", signature);
+			params.put("timestamp", timestamp);
 
 			try {
 				HttpUtil.post(platformRecordUrl, params);
@@ -61,12 +80,20 @@ public class SyncServiceImpl implements ISyncService {
 		this.platformRecordUrl = platformRecordUrl;
 	}
 
-	public String getSerialNo() {
-		return serialNo;
+	public String getParkCode() {
+		return parkCode;
 	}
 
-	public void setSerialNo(String serialNo) {
-		this.serialNo = serialNo;
+	public void setParkCode(String parkCode) {
+		this.parkCode = parkCode;
+	}
+
+	public String getParkSecret() {
+		return parkSecret;
+	}
+
+	public void setParkSecret(String parkSecret) {
+		this.parkSecret = parkSecret;
 	}
 
 }

@@ -10,8 +10,8 @@
 		<property name="platformRecordUrl">
 			<value>${platform.record.url}</value>
 		</property>
-		<property name="serialNo">
-			<value>${serial.no}</value>
+		<property name="parkCode">
+			<value>${park.code}</value>
 		</property>
 	</bean>
 	

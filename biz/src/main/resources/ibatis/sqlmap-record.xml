@@ -10,7 +10,7 @@
 	<![CDATA[
 		SELECT CONVERT(VARCHAR(100),t.InTime,20)  AS startTime,
 		  CONVERT(     VARCHAR(100),t.OutTime,20) AS endTime,
-		  t.CardNo                                AS parkCardNo,
+		  t.CardNo                                AS cardNo,
 		  t.BusNo                                 AS carNo
 		FROM BusRecord t 
 	]]>
