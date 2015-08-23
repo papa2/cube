@@ -39,9 +39,10 @@ public class SyncServiceImpl implements ISyncService {
 		if (list != null && list.size() > 0) {
 			Map<String, String> params = new HashMap<String, String>();
 			params.put("parkCode", parkCode);
-			params.put("recordList", JSON.toJSONString(list));
 
 			String timestamp = Long.toString(System.currentTimeMillis() / 1000);
+			params.put("timestamp", timestamp);
+
 			StringBuilder sb = new StringBuilder();
 			sb.append("parkCode=").append(parkCode).append("&parkSecret=").append(parkSecret).append("&timestamp=")
 				.append(timestamp);
@@ -54,7 +55,7 @@ public class SyncServiceImpl implements ISyncService {
 			}
 
 			params.put("signature", signature);
-			params.put("timestamp", timestamp);
+			params.put("recordList", JSON.toJSONString(list));
 
 			try {
 				HttpUtil.post(platformRecordUrl, params);
