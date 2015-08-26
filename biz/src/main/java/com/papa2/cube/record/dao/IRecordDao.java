@@ -14,9 +14,10 @@ public interface IRecordDao {
 	/**
 	 * 获取停车系统数据.
 	 * 
+	 * @param type
 	 * @param record
 	 * @return
 	 */
-	List<Record> getRecordList(Record record);
+	List<Record> getRecordList(String type, Record record);
 
 }

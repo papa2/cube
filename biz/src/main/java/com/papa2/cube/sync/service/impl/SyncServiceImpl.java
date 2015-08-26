@@ -34,7 +34,13 @@ public class SyncServiceImpl implements ISyncService {
 
 	@Override
 	public void sync() {
-		List<Record> list = recordService.getRecordList();
+		List<Record> list = recordService.getRecordList("I");
+
+		if (list != null && list.size() > 0) {
+			list.addAll(recordService.getRecordList("O"));
+		} else {
+			list = recordService.getRecordList("O");
+		}
 
 		if (list != null && list.size() > 0) {
 			Map<String, String> params = new HashMap<String, String>();

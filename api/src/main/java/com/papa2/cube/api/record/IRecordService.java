@@ -15,8 +15,9 @@ public interface IRecordService {
 	/**
 	 * 获得所有信息.
 	 * 
+	 * @param type
 	 * @return
 	 */
-	List<Record> getRecordList();
+	List<Record> getRecordList(String type);
 
 }

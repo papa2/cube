@@ -2,6 +2,7 @@ package com.papa2.cube.record.service.impl;
 
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import com.papa2.cube.api.record.IRecordService;
@@ -21,11 +22,15 @@ public class RecordServiceImpl implements IRecordService {
 	private IRecordDao recordDao;
 
 	@Override
-	public List<Record> getRecordList() {
+	public List<Record> getRecordList(String type) {
+		if (StringUtils.isBlank(type)) {
+			return null;
+		}
+
 		Record record = new Record();
 
 		try {
-			return recordDao.getRecordList(record);
+			return recordDao.getRecordList(type, record);
 		} catch (Exception e) {
 			logger.error(LogUtil.parserBean(record), e);
 		}

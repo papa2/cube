@@ -6,14 +6,25 @@
 	
 	<typeAlias alias="record" type="com.papa2.cube.api.record.bo.Record" />
 	
-	<select id="getRecordList" parameterClass="record" resultClass="record">
+	<select id="getRecordList1" parameterClass="record" resultClass="record">
 	<![CDATA[
-		SELECT CASE WHEN t.DoorID = '入口' then CONVERT(VARCHAR(100), t.IoDate, 20) ELSE '' END AS startTime,
-			   CASE WHEN t.DoorID = '出口' then CONVERT(VARCHAR(100), t.IoDate, 20) ELSE '' END AS endTime,
-			   t.CardNo AS cardNo,
-			   t.BusNo AS carNo
-		  FROM IoData t
-		 WHERE t.IoDate > dateadd(mi, -5, getdate())
+		SELECT CONVERT(VARCHAR(100), t.InDateTime, 20) AS startTime,
+			   '' AS endTime,
+			   t.CarNo AS cardNo,
+			   t.CarNo AS carNo
+		  FROM InRecord t
+		 WHERE t.InDateTime > dateadd(mi, -3, getdate())
+	]]>
+	</select>
+	
+	<select id="getRecordList2" parameterClass="record" resultClass="record">
+	<![CDATA[
+		SELECT '' AS startTime,
+			   CONVERT(VARCHAR(100), t.OutDateTime, 20) AS endTime,
+			   t.CarNo AS cardNo,
+			   t.CarNo AS carNo
+		  FROM OutRecord t
+		 WHERE t.OutDateTime > dateadd(mi, -3, getdate())
 	]]>
 	</select>
 	
