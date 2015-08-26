@@ -13,6 +13,9 @@
 		<property name="parkCode">
 			<value>${park.code}</value>
 		</property>
+		<property name="parkSecret">
+			<value>${park.secret}</value>
+		</property>
 	</bean>
 	
 </beans>
