@@ -13,7 +13,7 @@
 			   t.CardNo AS cardNo,
 			   t.BusNo AS carNo
 		  FROM IoData t
-		 WHERE t.IoDate > dateadd(mi, -8, getdate())
+		 WHERE t.IoDate > dateadd(mi, -5, getdate())
 	]]>
 	</select>
 	
