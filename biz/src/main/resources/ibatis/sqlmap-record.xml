@@ -8,23 +8,23 @@
 	
 	<select id="getRecordList1" parameterClass="record" resultClass="record">
 	<![CDATA[
-		SELECT CONVERT(VARCHAR(100), t.InDateTime, 20) AS startTime,
+		SELECT CONVERT(VARCHAR(100), t.入场时间, 20) AS startTime,
 			   '' AS endTime,
-			   t.CarNo AS cardNo,
-			   t.CarNo AS carNo
-		  FROM InRecord t
-		 WHERE t.InDateTime > dateadd(mi, -3, getdate())
+			   t.卡片号码 AS cardNo,
+			   t.车牌号码 AS carNo
+		  FROM MYCARCOMERECORD t
+		 WHERE t.入场时间 > dateadd(mi, -3, getdate())
 	]]>
 	</select>
 	
 	<select id="getRecordList2" parameterClass="record" resultClass="record">
 	<![CDATA[
 		SELECT '' AS startTime,
-			   CONVERT(VARCHAR(100), t.OutDateTime, 20) AS endTime,
-			   t.CarNo AS cardNo,
-			   t.CarNo AS carNo
-		  FROM OutRecord t
-		 WHERE t.OutDateTime > dateadd(mi, -3, getdate())
+			   CONVERT(VARCHAR(100), t.出场时间, 20) AS endTime,
+			   t.卡片号码 AS cardNo,
+			   t.车牌号码 AS carNo
+		  FROM MYCARGOOUTRECORD t
+		 WHERE t.出场时间 > dateadd(mi, -3, getdate())
 	]]>
 	</select>
 	
